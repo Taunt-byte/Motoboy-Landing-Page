@@ -1,0 +1,1122 @@
+
+/* =========================================
+   ROTA EXPRESS
+   Landing Page profissional para motoboy
+   ========================================= */
+
+/* 1. Variáveis globais */
+:root {
+  --bg: #111111;
+  --surface: #191919;
+  --surface-light: #222222;
+  --text: #f7f7f2;
+  --muted: #a8a8a3;
+  --accent: #facc15;
+  --accent-hover: #ffe04b;
+  --border: rgba(255, 255, 255, 0.12);
+
+  --font-body: "Inter", Arial, sans-serif;
+  --font-display: "Barlow Condensed", Impact, sans-serif;
+  --container: 1160px;
+}
+
+/* 2. Reset e configurações gerais */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Acessibilidade: foco visível ao navegar pelo teclado */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.container {
+  width: min(var(--container), calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.section {
+  padding: 104px 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -60px;
+  z-index: 1000;
+  padding: 10px 14px;
+  background: var(--accent);
+  color: #111;
+  font-weight: 700;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.025em;
+  line-height: 0.96;
+}
+
+h1 span,
+h2 span {
+  color: var(--accent);
+}
+
+/* 3. Cabeçalho */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(17, 17, 17, 0.92);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(16px);
+}
+
+.header-inner {
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.brand-mark {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  background: var(--accent);
+  color: #111;
+  font-family: var(--font-display);
+  font-size: 29px;
+  font-weight: 800;
+  line-height: 1;
+  transform: skew(-5deg);
+}
+
+.brand-mark span {
+  font-size: 15px;
+  margin-left: -2px;
+}
+
+.brand-name {
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  line-height: 1.05;
+}
+
+.brand-name span {
+  color: var(--accent);
+  font-size: 11px;
+  letter-spacing: 0.27em;
+  margin-top: 5px;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.main-nav > a:not(.nav-cta) {
+  color: #d1d1cc;
+  font-size: 13px;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.main-nav > a:not(.nav-cta):hover {
+  color: var(--accent);
+}
+
+.nav-cta {
+  padding: 12px 16px;
+  color: #111;
+  background: var(--accent);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.nav-cta span {
+  margin-left: 8px;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+/* 4. Botões */
+.button {
+  min-height: 50px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+  padding: 0 19px;
+  border: 1px solid transparent;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.035em;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    transform 0.2s,
+    border-color 0.2s;
+}
+
+.button span {
+  font-size: 16px;
+}
+
+.button-primary {
+  background: var(--accent);
+  color: #111;
+}
+
+.nav-cta:hover,
+.button-primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+.button-secondary {
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.button-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* 5. Seção principal */
+.hero {
+  padding-top: 76px;
+  padding-bottom: 28px;
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 54px;
+  align-items: center;
+}
+
+.hero-copy {
+  padding: 24px 0 46px;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  line-height: 1.5;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: inline-block;
+  box-shadow: 0 0 14px rgba(250, 204, 21, 0.55);
+  flex-shrink: 0;
+}
+
+h1 {
+  margin: 24px 0;
+  font-size: clamp(58px, 7.1vw, 92px);
+}
+
+.hero-description {
+  max-width: 470px;
+  color: #b8b8b3;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.hero-proof {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 34px;
+}
+
+.proof-icon {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  background: rgba(250, 204, 21, 0.13);
+  color: var(--accent);
+  border: 1px solid rgba(250, 204, 21, 0.3);
+  border-radius: 50%;
+  font-weight: 800;
+}
+
+.hero-proof p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.hero-proof strong {
+  color: #f4f4ef;
+  font-size: 12px;
+}
+
+.hero-proof p span {
+  color: var(--muted);
+}
+
+/* Imagem de destaque.
+   Troque a URL por uma foto autorizada do motoboy. */
+.hero-visual {
+  min-height: 520px;
+  position: relative;
+  isolation: isolate;
+  background-color: #2b2b2b;
+  background-image: url(
+    "https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1200&q=85"
+  );
+  background-position: center 53%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hero-visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.12),
+      rgba(0, 0, 0, 0.05) 45%,
+      rgba(0, 0, 0, 0.78)
+    );
+}
+
+.hero-visual::after {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  pointer-events: none;
+}
+
+.visual-label {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 1;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.visual-label-top {
+  top: 34px;
+  right: 34px;
+  background: var(--accent);
+  color: #111;
+  padding: 11px 14px;
+}
+
+.label-symbol {
+  font-size: 17px;
+}
+
+.visual-caption {
+  position: absolute;
+  bottom: 42px;
+  left: 34px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+
+.caption-line {
+  width: 28px;
+  height: 2px;
+  background: var(--accent);
+}
+
+.visual-number {
+  position: absolute;
+  bottom: 34px;
+  right: 32px;
+  font-family: var(--font-display);
+  font-size: 42px;
+  font-weight: 800;
+}
+
+.visual-number span {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-align: right;
+}
+
+.hero-bottom {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding-top: 28px;
+  color: #777771;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.hero-bottom-line {
+  height: 1px;
+  flex: 1;
+  background: var(--border);
+}
+
+.hero-bottom a {
+  color: #c7c7c1;
+}
+
+/* 6. Serviços */
+.services {
+  background: #f4f4ef;
+  color: #151515;
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 50px;
+  margin-bottom: 42px;
+}
+
+.section-heading .eyebrow {
+  color: #8a6a00;
+}
+
+h2 {
+  font-size: clamp(42px, 5vw, 62px);
+  margin-bottom: 0;
+}
+
+.section-intro {
+  max-width: 340px;
+  margin: 0 0 4px;
+  color: #686862;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid #d7d7cf;
+}
+
+.service-card {
+  min-height: 310px;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-right: 1px solid #d7d7cf;
+  transition: background 0.2s;
+}
+
+.service-card:last-child {
+  border-right: 0;
+}
+
+.service-card:hover {
+  background: #fff;
+}
+
+.service-card-featured {
+  background: #e9e9e1;
+}
+
+.service-index {
+  color: #7b7b73;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.service-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin: 27px 0 18px;
+  background: var(--accent);
+  font-size: 27px;
+  font-weight: 700;
+}
+
+.service-card h3 {
+  margin-bottom: 10px;
+  font-family: var(--font-display);
+  font-size: 26px;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.service-card p {
+  margin-bottom: 24px;
+  color: #686862;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.text-link {
+  margin-top: auto;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.text-link span {
+  margin-left: 8px;
+  color: #8a6a00;
+}
+
+.fine-print {
+  margin: 15px 0 0;
+  color: #77776f;
+  font-size: 10px;
+}
+
+/* 7. Vantagens */
+.advantages {
+  background: var(--bg);
+}
+
+.advantages-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 90px;
+  align-items: center;
+}
+
+.advantages-copy h2 {
+  margin: 22px 0;
+}
+
+.advantages-copy > p:not(.eyebrow) {
+  max-width: 410px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.advantages-copy .button {
+  margin-top: 17px;
+}
+
+.advantage-list {
+  border-top: 1px solid var(--border);
+}
+
+.advantage-item {
+  display: grid;
+  grid-template-columns: 42px 1fr 20px;
+  gap: 18px;
+  align-items: start;
+  padding: 25px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.advantage-number {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.advantage-item h3 {
+  margin-bottom: 6px;
+  font-family: var(--font-display);
+  font-size: 23px;
+  text-transform: uppercase;
+}
+
+.advantage-item p {
+  margin: 0;
+  max-width: 430px;
+  color: #9a9a94;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.advantage-arrow {
+  color: var(--accent);
+  font-size: 18px;
+}
+
+/* 8. Como funciona */
+.process {
+  background: #202020;
+}
+
+.process .section-intro {
+  color: #aaa;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.process-step {
+  padding-top: 24px;
+}
+
+.process-step > span {
+  font-family: var(--font-display);
+  font-size: 45px;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.process-rule {
+  height: 1px;
+  margin: 16px 0 22px;
+  background: linear-gradient(
+    90deg,
+    var(--accent),
+    rgba(250, 204, 21, 0.08)
+  );
+}
+
+.process-step h3 {
+  margin-bottom: 8px;
+  font-family: var(--font-display);
+  font-size: 25px;
+  text-transform: uppercase;
+}
+
+.process-step p {
+  max-width: 280px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* 9. Contato e formulário */
+.contact {
+  background: var(--accent);
+  color: #111;
+}
+
+.contact-panel {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.contact .eyebrow {
+  color: #433600;
+}
+
+.contact .status-dot {
+  background: #111;
+  box-shadow: none;
+}
+
+.contact-copy h2 {
+  margin: 23px 0;
+}
+
+.contact-copy h2 span {
+  color: #fff;
+  -webkit-text-stroke: 1px #111;
+}
+
+.contact-copy > p:not(.eyebrow) {
+  max-width: 390px;
+  color: #3f350b;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.contact-note {
+  display: flex;
+  gap: 10px;
+  margin-top: 30px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(17, 17, 17, 0.25);
+  color: #4d400c;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.contact-note span {
+  font-size: 20px;
+}
+
+.quote-form {
+  padding: 30px;
+  background: #fff;
+  color: #111;
+  box-shadow: 12px 12px 0 rgba(17, 17, 17, 0.13);
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 17px;
+}
+
+.form-row label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+  width: 100%;
+  border: 1px solid #d9d9d2;
+  border-radius: 0;
+  background: #fafaf7;
+  color: #151515;
+  padding: 12px 13px;
+  font-size: 12px;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus {
+  border-color: #9b7a00;
+  background: #fff;
+  outline: 2px solid rgba(250, 204, 21, 0.35);
+  outline-offset: 0;
+}
+
+.form-row textarea {
+  resize: vertical;
+  min-height: 84px;
+}
+
+.form-row input::placeholder,
+.form-row textarea::placeholder {
+  color: #92928a;
+}
+
+.form-submit {
+  width: 100%;
+  border: 0;
+}
+
+.form-privacy {
+  margin: 12px 0 0;
+  color: #77776f;
+  font-size: 9px;
+  line-height: 1.7;
+}
+
+.form-error {
+  margin: 10px 0 0;
+  color: #a32121;
+  font-size: 12px;
+}
+
+/* 10. Rodapé */
+.site-footer {
+  background: #0a0a0a;
+}
+
+.footer-main {
+  min-height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  border-bottom: 1px solid var(--border);
+}
+
+.footer-main > p {
+  margin: 0;
+  color: #9a9a94;
+  font-size: 11px;
+}
+
+.back-top {
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 19px;
+  padding-bottom: 19px;
+  color: #777771;
+  font-size: 9px;
+}
+
+/* 11. Botão flutuante de WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 90;
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border: 2px solid #111;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #111;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s, background 0.2s;
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-4px);
+  background: var(--accent-hover);
+}
+
+.whatsapp-float svg {
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
+}
+
+/* 12. Telas médias */
+@media (max-width: 900px) {
+  .main-nav {
+    gap: 17px;
+  }
+
+  .hero-grid {
+    gap: 28px;
+  }
+
+  .hero-visual {
+    min-height: 460px;
+  }
+
+  .advantages-grid {
+    gap: 45px;
+  }
+
+  .contact-panel {
+    gap: 40px;
+  }
+
+  .service-card {
+    padding: 22px;
+  }
+}
+
+/* 13. Celulares e telas pequenas */
+@media (max-width: 720px) {
+  .container {
+    width: min(var(--container), calc(100% - 36px));
+  }
+
+  .section {
+    padding: 76px 0;
+  }
+
+  .header-inner {
+    min-height: 72px;
+  }
+
+  /* Botão para abrir e fechar o menu */
+  .menu-toggle {
+    display: flex;
+    width: 42px;
+    height: 42px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    align-items: center;
+    border: 1px solid var(--border);
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    width: 18px;
+    height: 2px;
+    background: #fff;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+
+  .menu-toggle[aria-expanded="true"] span:first-child {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle[aria-expanded="true"] span:last-child {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .main-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 10px 18px 18px;
+    background: #111;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .main-nav.is-open {
+    display: flex;
+  }
+
+  .main-nav > a:not(.nav-cta) {
+    padding: 13px 4px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-cta {
+    margin-top: 12px;
+    text-align: center;
+  }
+
+  .hero {
+    padding-top: 40px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .hero-copy {
+    padding: 15px 0 0;
+  }
+
+  h1 {
+    font-size: clamp(60px, 15vw, 84px);
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+
+  .hero-visual {
+    min-height: 420px;
+  }
+
+  .hero-bottom {
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 8px;
+  }
+
+  .hero-bottom-line {
+    min-width: 30px;
+  }
+
+  .section-heading {
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  .section-intro {
+    margin-top: 20px;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    min-height: 270px;
+    border-right: 0;
+    border-bottom: 1px solid #d7d7cf;
+  }
+
+  .service-card:last-child {
+    border-bottom: 0;
+  }
+
+  .service-icon {
+    margin-top: 18px;
+  }
+
+  .advantages-grid,
+  .contact-panel {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .process-step {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    column-gap: 16px;
+    padding-top: 14px;
+  }
+
+  .process-step > span {
+    grid-row: span 2;
+    font-size: 38px;
+  }
+
+  .process-rule {
+    margin: 12px 0;
+  }
+
+  .process-step h3,
+  .process-step p {
+    grid-column: 2;
+  }
+
+  .process-step p {
+    margin-bottom: 10px;
+  }
+
+  .quote-form {
+    padding: 22px 18px;
+    box-shadow: 7px 7px 0 rgba(17, 17, 17, 0.13);
+  }
+
+  .footer-main {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding-top: 28px;
+    padding-bottom: 25px;
+  }
+
+  .footer-main > p {
+    order: 3;
+    width: 100%;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .whatsapp-float {
+    width: 52px;
+    height: 52px;
+    right: 14px;
+    bottom: 14px;
+  }
+}
+
+/* Respeita usuários que preferem menos animações */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

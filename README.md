@@ -1,51 +1,128 @@
-# Landing Page motoboy
 
-Uma breve descrição sobre o que esse projeto faz e para quem ele é
+# Rota Express — Motorcycle Courier Landing Page
 
+A professional, responsive landing page for an independent motorcycle courier, built with **HTML5, CSS3, and vanilla JavaScript**.
 
-![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
+The website presents delivery services and allows visitors to request a quote through WhatsApp.
 
+> **Portfolio project:** Rota Express is a demonstration brand. Replace the sample contact number, brand information, service area, and images before using the website for a real business.
 
-## Referência
+## Features
 
- - [Awesome Readme Templates](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
- - [Awesome README](https://github.com/matiassingers/awesome-readme)
- - [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
+- Responsive layout for desktop, tablet, and mobile.
+- Modern black, yellow, and white visual identity.
+- Hero section with a prominent call to action.
+- Delivery services and business advantages sections.
+- Three-step explanation of the delivery process.
+- Quote request form integrated with WhatsApp.
+- Floating WhatsApp contact button.
+- Mobile navigation menu.
+- Automatic service selection from service cards.
+- Automatically updated footer year.
+- Semantic HTML and visible keyboard focus.
+- Reduced-motion accessibility support.
+- No JavaScript frameworks or backend required.
 
+## Demo mobile
 
-## Demonstração
+![Demo mobile](assets/Preview-mobile.png)
 
-Insira um gif ou um link de alguma demonstração
+## Demo web
 
+![Demo web](assets/Preview-web.png)
 
-## Rodando localmente
+## Tech Stack
 
-Clone o projeto
+- HTML5
+- CSS3
+- Vanilla JavaScript
+- WhatsApp Click to Chat
+- Git and GitHub
 
-```bash
-  git clone https://link-para-o-projeto
+## Project Structure
+
+```text
+motoboy-landing-page/
+├── index.html
+├── css/
+│   └── style.css
+├── js/
+│   └── script.js
+└── README.md
 ```
 
-Entre no diretório do projeto
+## Getting Started
 
-```bash
-  cd my-project
+1. Clone or download this repository.
+2. Open the project folder in Visual Studio Code.
+3. Open `index.html` in your browser.
+4. Alternatively, use the Live Server extension for automatic browser refresh while developing.
+
+No Node.js installation or build process is required.
+
+## WhatsApp Configuration
+
+Open `js/script.js` and find the following constant:
+
+```javascript
+const WHATSAPP_NUMBER = "5511999999999";
 ```
 
-Instale as dependências
+Replace the sample value with the destination WhatsApp number, including the country code and area code.
 
-```bash
-  npm install
-```
+Use digits only, without `+`, spaces, parentheses, or hyphens.
 
-Inicie o servidor
+For example, `5511988887777` is a fictional Brazilian number.
 
-```bash
-  npm run start
-```
+Before deployment:
 
+- Configure the correct WhatsApp number.
+- Test the floating contact button.
+- Submit a test quote request.
+- Confirm that the generated message contains the correct fields.
 
-## Aprendizados
+The website opens WhatsApp with a pre-filled message. The visitor must send the message manually.
 
-O que você aprendeu construindo esse projeto? Quais desafios você enfrentou e como você superou-os?
+## Customization
 
+Before using the project for a real business:
+
+- Replace the Rota Express brand if necessary.
+- Update the service descriptions and service area.
+- Replace the sample image with an appropriate image you have permission to use.
+- Configure the correct WhatsApp number.
+- Add accurate business contact information.
+- Review the website on desktop and mobile devices.
+
+The typography is loaded from Google Fonts. An internet connection is required to load these fonts.
+
+## Deployment — GitHub Pages
+
+1. Create a public GitHub repository named `motoboy-landing-page`.
+2. Upload `index.html`, the `css` and `js` folders, and this README to the repository root.
+3. Open the repository's **Settings** page.
+4. Select **Pages** in the sidebar.
+5. Under **Build and deployment**, choose **Deploy from a branch**.
+6. Select the `main` branch and the `/ (root)` folder.
+7. Save the configuration.
+8. Wait for GitHub Pages to publish the site and open the URL shown in the Pages settings.
+
+GitHub Pages can host this static project without a backend.
+
+## Limitations
+
+- Does not calculate delivery prices automatically.
+- Does not calculate routes or distances.
+- Does not track deliveries.
+- Does not store submitted quote requests.
+- Requires the visitor to confirm the message in WhatsApp.
+- The external image and Google Fonts require an internet connection.
+
+## Future Improvements
+
+- Add a real service-area section.
+- Include a map of supported neighborhoods.
+- Add a delivery price estimator.
+- Improve SEO and social sharing metadata.
+- Add optimized local images.
+- Include screenshots of the deployed website.
